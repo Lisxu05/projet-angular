@@ -3,7 +3,7 @@ import { AirtableService } from './services/airtable.service';
 
 @Component({
   selector: 'app-root',
-  templateUrl: './app.html'
+  templateUrl: './app.component.html'
 })
 export class AppComponent implements OnInit {
   airtableData: any;
