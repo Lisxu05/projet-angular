@@ -1,12 +1,19 @@
-import { Component, signal } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { Component, OnInit } from '@angular/core';
+import { AirtableService } from './services/airtable.service';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet],
-  templateUrl: './app.html',
-  styleUrl: './app.scss'
+  templateUrl: './app.html'
 })
-export class App {
-  protected readonly title = signal('mon-portfolio');
+export class AppComponent implements OnInit {
+  airtableData: any;
+
+  constructor(private airtableService: AirtableService) {}
+
+  ngOnInit(): void {
+    this.airtableService.getData().subscribe({
+      next: (data) => this.airtableData = data,
+      error: (err) => console.error('Erreur API:', err)
+    });
+  }
 }
