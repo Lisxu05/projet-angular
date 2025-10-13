@@ -1,6 +1,6 @@
 
 export default {
-  basePath: 'https://Lisxu05.github.io/projet-angular',
+  basePath: '/projet-angular',
   supportedLocales: {
   "en-US": ""
 },
