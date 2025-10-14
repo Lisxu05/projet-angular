@@ -1,2 +1,4 @@
 <h1>Données Airtable</h1>
-<pre>{{ airtableData }}</pre>
+@for (airtable of airtableData; track $index) {
+  <pre>{{ airtable.nom }}</pre>
+}
