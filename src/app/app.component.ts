@@ -8,7 +8,7 @@ import { tap } from 'rxjs';
 })
 export class AppComponent implements OnInit {
 
-  private airtableData: any;
+  public airtableData: any;
 
   public constructor(
     private airtableService: AirtableService
